@@ -1,4 +1,4 @@
-import initSmoothScroll from './modules/scroll-suave.js';
+import initSmoothScroll from './modules/smooth-scroll.js';
 import initScrollAnimation from './modules/scroll-animation.js';
 import activateTabNav from './modules/active-tab-nav.js';
 import initAccordion from './modules/accordion.js';
