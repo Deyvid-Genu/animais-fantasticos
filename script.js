@@ -1,0 +1,2 @@
+let texto =
+  'lorem  ijdshuiucjnjdncodocjoijdijcoijojeiciojoijoijoijiojijoijoijoijoijijojijijijiojiojijoijoijoijijiojiojoijiojoijoijjoijoijjojijoijoijoijiojijijijijojoijijoijoijiojijiojijiojiojijijijjijijoijojijojirjrojijijgy';
