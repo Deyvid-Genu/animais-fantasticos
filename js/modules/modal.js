@@ -1,21 +1,42 @@
-export default function initModal() {
-  const buttonOpen = document.querySelector("[data-modal='abrir']");
-  const buttonClose = document.querySelector("[data-modal='fechar']");
-  const containerModal = document.querySelector("[data-modal='container']");
-  if (buttonOpen && buttonClose && containerModal) {
-    function toggleModal(event) {
-      event.preventDefault();
-      containerModal.classList.toggle('ativo');
-    }
-    buttonOpen.addEventListener('click', toggleModal);
-    buttonClose.addEventListener('click', toggleModal);
+export default class Modal {
+  constructor(open, close, container) {
+    this.buttonOpen = document.querySelector(open);
+    this.buttonClose = document.querySelector(close);
+    this.containerModal = document.querySelector(container);
 
-    function modalOuterClick(event) {
-      if (event.target === this) {
-        toggleModal(event);
-      }
-    }
+    //binding the object to the this of the callbacks
+    this.eventToggleModal = this.eventToggleModal.bind(this);
+    this.modalOuterClick = this.modalOuterClick.bind(this);
+  }
 
-    containerModal.addEventListener('click', modalOuterClick);
+  //open or close the modal
+  toggleModal() {
+    this.containerModal.classList.toggle('ativo');
+  }
+
+  //add the toggle event to the modal
+  eventToggleModal(event) {
+    event.preventDefault();
+    this.toggleModal();
+  }
+
+  //closes the modal when click out of its bounds
+  modalOuterClick(event) {
+    if (event.target === this.containerModal) {
+      this.toggleModal();
+    }
+  }
+
+  //add events to the modal elements
+  addModalEvent() {
+    this.buttonOpen.addEventListener('click', this.eventToggleModal);
+    this.buttonClose.addEventListener('click', this.eventToggleModal);
+    this.containerModal.addEventListener('click', this.modalOuterClick);
+  }
+  init() {
+    if (this.buttonOpen && this.buttonClose && this.containerModal) {
+      this.addModalEvent();
+    }
+    return this;
   }
 }

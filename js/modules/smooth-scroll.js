@@ -25,7 +25,7 @@ export default class SmoothScroll {
   init() {
     if (this.internalLinks.length) {
       this.addLinkEvent();
-      return this;
     }
+    return this;
   }
 }
