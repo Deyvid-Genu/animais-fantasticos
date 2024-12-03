@@ -30,5 +30,6 @@ export default class activateTabNav {
 
       this.addTabNavEvent();
     }
+    return this;
   }
 }
