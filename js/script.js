@@ -1,5 +1,5 @@
 import SmoothScroll from './modules/smooth-scroll.js';
-import initScrollAnimation from './modules/scroll-animation.js';
+import ScrollAnimation from './modules/scroll-animation.js';
 import TabNav from './modules/active-tab-nav.js';
 import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
@@ -34,7 +34,9 @@ tooltip.init();
 
 createAnimals('../../animaisapi.json', '.numeros-grid');
 
-initScrollAnimation();
+const animationScroll = new ScrollAnimation("[data-anime='scroll']");
+animationScroll.init();
+
 initDrodownMenu();
 initMenuMobile();
 initFuncionamento();
