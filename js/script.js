@@ -4,7 +4,7 @@ import TabNav from './modules/active-tab-nav.js';
 import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
-import initDrodownMenu from './modules/dropdown-menu.js';
+import DrodownMenu from './modules/dropdown-menu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initFuncionamento from './modules/funcionamento.js';
 import createAnimals from './modules/fetch-animals.js';
@@ -13,7 +13,7 @@ import fetchBitcoin from './modules/fetch-bitcoin.js';
 const smoothScroll = new SmoothScroll("[data-menu='smooth'] a[href^='#']");
 smoothScroll.init();
 
-const accordion = new Accordion('[data-anime="accordion"] dt');
+const accordion = new Accordion('[data-anime="accordion"] dt', 'active');
 accordion.init();
 
 const tabNav = new TabNav(
@@ -37,7 +37,8 @@ createAnimals('../../animaisapi.json', '.numeros-grid');
 const animationScroll = new ScrollAnimation("[data-anime='scroll']");
 animationScroll.init();
 
-initDrodownMenu();
+const dropdownMenu = new DrodownMenu('[data-dropdown]');
+dropdownMenu.init();
 initMenuMobile();
 initFuncionamento();
 fetchBitcoin('https://blockchain.info/ticker', '.btc-preco');
