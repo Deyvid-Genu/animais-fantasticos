@@ -1,11 +1,11 @@
-import debounce from './debouce.js';
+import debounce from './debounce.js';
 export default class ScrollAnimation {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.halfWindow = window.innerHeight * 0.6;
 
     //binding the oject as the this of the callback function
-    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 20);
   }
 
   //get the offsetTop of each element
