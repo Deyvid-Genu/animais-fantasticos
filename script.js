@@ -1,2 +1,0 @@
-let texto =
-  'lorem  ijdshuiucjnjdncodocjoijdijcoijojeiciojoijoijoijiojijoijoijoijoijijojijijijiojiojijoijoijoijijiojiojoijiojoijoijjoijoijjojijoijoijoijiojijijijijojoijijoijoijiojijiojijiojiojijijijjijijoijojijojirjrojijijgy';
